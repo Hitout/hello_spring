@@ -1,0 +1,12 @@
+server:
+  servlet:
+    context-path: /web
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.gxyan.aoplog.entity
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/hello_spring?useSSL=false&characterEncoding=UTF-8
+    username: gxyan
+    password:
+    driver-class-name: com.mysql.cj.jdbc.Driver
