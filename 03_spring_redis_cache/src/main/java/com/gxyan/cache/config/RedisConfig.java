@@ -59,6 +59,12 @@ public class RedisConfig extends CachingConfigurerSupport {
                 .cacheDefaults(redisCacheConfiguration).build();
     }
 
+    /**
+     * RedisTemplate是SpringDataRedis对jedis Api的高度封装，提供对redis的各种操作、异常处理及序列化等功能
+     * StringRedisTemplate是RedisTemplate的子类，提供<String, String>类型的操作处理
+     * @param factory 连接池
+     * @return RedisTemplate<String, String>
+     */
     @Bean
     public RedisTemplate<String, String> redisTemplate(RedisConnectionFactory factory) {
         StringRedisTemplate template = new StringRedisTemplate(factory);
@@ -68,6 +74,7 @@ public class RedisConfig extends CachingConfigurerSupport {
     }
 
     private void setSerializer(StringRedisTemplate template) {
+        // 使用jackson进行序列化和反序列化
         Jackson2JsonRedisSerializer<Object> serializer = new Jackson2JsonRedisSerializer<>(Object.class);
         ObjectMapper objectMapper = new ObjectMapper();
         objectMapper.setVisibility(PropertyAccessor.ALL, JsonAutoDetect.Visibility.ANY);
