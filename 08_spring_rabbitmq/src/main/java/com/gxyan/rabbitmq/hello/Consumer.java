@@ -1,6 +1,6 @@
 package com.gxyan.rabbitmq.hello;
 
-import com.gxyan.rabbitmq.constant.MqConstant;
+import com.gxyan.rabbitmq.constant.MQConstant;
 import com.rabbitmq.client.*;
 
 import java.io.IOException;
@@ -33,7 +33,7 @@ public class Consumer {
         //第三个参数：是否队列私有化，false则代表所有消费者都可以访问，true代表只有第一次拥有它的消费者才能一直使用，其他消费者不让访问
         //第四个：是否自动删除,false代表连接停掉后不自动删除掉这个队列
         //其他额外的参数, null
-        channel.queueDeclare(MqConstant.Q_HELLO,false, false, false, null);
+        channel.queueDeclare(MQConstant.Q_HELLO,false, false, false, null);
 
         //从MQ服务器中获取数据
 
@@ -41,7 +41,7 @@ public class Consumer {
         //第一个参数：队列名
         //第二个参数代表是否自动确认收到消息，false代表手动编程来确认消息，这是MQ的推荐做法
         //第三个参数要传入DefaultConsumer的实现类
-        channel.basicConsume(MqConstant.Q_HELLO, false, new HelloConsumer(channel));
+        channel.basicConsume(MQConstant.Q_HELLO, false, new HelloConsumer(channel));
     }
 }
 
