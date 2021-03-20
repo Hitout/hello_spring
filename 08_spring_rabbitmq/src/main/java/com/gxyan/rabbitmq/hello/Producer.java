@@ -1,5 +1,6 @@
 package com.gxyan.rabbitmq.hello;
 
+import com.gxyan.rabbitmq.constant.MqConstant;
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
 import com.rabbitmq.client.ConnectionFactory;
@@ -34,15 +35,15 @@ public class Producer {
         //第三个参数：是否队列私有化，false则代表所有消费者都可以访问，true代表只有第一次拥有它的消费者才能一直使用，其他消费者不让访问
         //第四个：是否自动删除,false代表连接停掉后不自动删除掉这个队列
         //其他额外的参数, null
-        channel.queueDeclare("gxyan.hello",false, false, false, null);
+        channel.queueDeclare(MqConstant.Q_HELLO,false, false, false, null);
 
         String message = "HELLO GXAYN";
         //四个参数
-        //exchange 交换机，暂时用不到，在后面进行发布订阅时才会用到
+        //exchange 交换机
         //队列名称
         //额外的设置属性
         //最后一个参数是要传递的消息字节数组
-        channel.basicPublish("", "gxyan.hello", null,message.getBytes());
+        channel.basicPublish("", MqConstant.Q_HELLO, null,message.getBytes());
         channel.close();
         conn.close();
         System.out.println("===发送成功===");
