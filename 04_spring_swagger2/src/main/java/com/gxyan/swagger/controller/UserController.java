@@ -14,6 +14,8 @@ import java.util.List;
 import java.util.Map;
 
 /**
+ * 访问地址：http://localhost:8080/swagger-ui.html
+ *
  * ·@Api：修饰整个类，描述Controller的作用
  * ·@ApiOperation：描述一个类的一个方法，或者说一个接口
  * ·@ApiParam：单个参数描述
