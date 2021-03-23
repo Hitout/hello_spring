@@ -6,4 +6,6 @@ package com.gxyan.rabbitmq.service;
  */
 public interface IRabbitService {
     void sendMessage(String message);
+
+    void sendConfirmMessage(String message);
 }

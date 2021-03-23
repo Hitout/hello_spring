@@ -22,4 +22,9 @@ public class RabbitController {
     public void sendMessage(@PathVariable(value = "message") String message) {
         rabbitService.sendMessage(message);
     }
+
+    @GetMapping("sendConfirm/{message}")
+    public void sendConfirmMessage(@PathVariable(value = "message") String message) {
+        rabbitService.sendConfirmMessage(message);
+    }
 }

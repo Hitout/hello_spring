@@ -8,3 +8,11 @@ spring:
     username: guest
     password: guest
     virtual-host: /
+    # 开启发送回调
+    publisher-confirm-type: SIMPLE
+    # 开启消息路由失败回调
+    publisher-returns: true
+    # 开启消息消费手动确认
+    listener:
+      direct:
+        acknowledge-mode: MANUAL
