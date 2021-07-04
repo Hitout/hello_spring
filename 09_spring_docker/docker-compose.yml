@@ -1,0 +1,10 @@
+version: '3'
+services:
+  hello:              #指定服务名
+    image: hello:1.0  #指定镜像名称
+    build:
+      ./docker        #指定Dockerfile所在路径
+    ports:
+      - "9001:9001"   #指定端口映射
+    expose:
+      - 9001          #声明容器对外暴露的端口
