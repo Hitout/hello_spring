@@ -9,7 +9,7 @@ docker run -d --name rabbitmq -p 5671:5671 -p 5672:5672 -p 4369:4369 -p 25672:25
 - 4369，25672：Erlang发现&集群端口
 
 ## 架构
-![RabbitMQ](http://gxyan.gitee.io/file/img/RabbitMQ.png)
+![RabbitMQ](https://hitout.github.io/file//img/RabbitMQ.png)
 
 - Broker：接收和分发消息的应用
 - Virtual Host：虚拟分组，不同的用户可以在不同的Virtual Host中创建 exchange/queue 等
