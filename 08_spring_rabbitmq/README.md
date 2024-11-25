@@ -9,7 +9,7 @@ docker run -d --name rabbitmq -p 5671:5671 -p 5672:5672 -p 4369:4369 -p 25672:25
 - 4369，25672：Erlang发现&集群端口
 
 ## 架构
-![RabbitMQ](https://hitout.github.io/file//img/RabbitMQ.png)
+![RabbitMQ](https://hitout.github.io/file/img/RabbitMQ.png)
 
 - Broker：接收和分发消息的应用
 - Virtual Host：虚拟分组，不同的用户可以在不同的Virtual Host中创建 exchange/queue 等
@@ -69,7 +69,7 @@ Dead-Letter-Exchange(DLX)死信交换机，若消息绑定了死信交换机消�
 ### 延迟队列
 RabbitMQ中可以通过 TTL+死信队列 方式实现延迟队列效果
 
-![延迟队列](http://gxyan.gitee.io/file/img/Delay_Queue.png)
+![延迟队列](https://hitout.github.io/file/img/Delay_Queue.png)
 
 ### 其它问题
 - 消息幂等：多次消费相同消息能得到相同的结果
